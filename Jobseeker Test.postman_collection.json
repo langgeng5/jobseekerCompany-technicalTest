@@ -1,0 +1,629 @@
+{
+	"info": {
+		"_postman_id": "9a358ae2-bc20-41fb-9151-d717d74ff8bb",
+		"name": "Jobseeker Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "16335591"
+	},
+	"item": [
+		{
+			"name": "Candidate",
+			"item": [
+				{
+					"name": "Get List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/candidate/?keyword=za&sortBy=fullName&direction=DESC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"candidate",
+								""
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "za"
+								},
+								{
+									"key": "sortBy",
+									"value": "fullName",
+									"description": "candidateId / fullName / dob / gender"
+								},
+								{
+									"key": "direction",
+									"value": "DESC",
+									"description": "ASC / DESC"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/candidate/?keyword&sortBy=fullName&direction=DESC",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"candidate",
+										""
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": null
+										},
+										{
+											"key": "sortBy",
+											"value": "fullName",
+											"description": "candidateId / fullName / dob / gender"
+										},
+										{
+											"key": "direction",
+											"value": "DESC",
+											"description": "ASC / DESC"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "[\r\n    {\r\n        \"candidateId\": \"6610aedab7a6493e2ddc711f\",\r\n        \"fullName\": \"zara\",\r\n        \"dob\": \"2022-01-02\",\r\n        \"gender\": \"Male\"\r\n    },\r\n    {\r\n        \"candidateId\": \"6610aedfb7a6493e2ddc7120\",\r\n        \"fullName\": \"bata\",\r\n        \"dob\": \"2022-01-02\",\r\n        \"gender\": \"Male\"\r\n    },\r\n    {\r\n        \"candidateId\": \"6610ad130589467d1b0e1748\",\r\n        \"fullName\": \"admin\",\r\n        \"dob\": \"2022-01-02\",\r\n        \"gender\": \"Male\"\r\n    },\r\n    {\r\n        \"candidateId\": \"6610f1269e35910ee5351407\",\r\n        \"fullName\": null,\r\n        \"dob\": \"2022-01-02\",\r\n        \"gender\": \"Male\"\r\n    }\r\n]"
+						}
+					]
+				},
+				{
+					"name": "Insert Data",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"\",\r\n    \"dob\": null,\r\n    \"gender\": \"Male\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/candidate"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Data",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"admin update\",\r\n    \"dob\": \"2022-01-03\",\r\n    \"gender\": \"Female\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/candidate/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"candidate",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "66102c831632136913bbde06"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/candidate/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"candidate",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "661027c826035022b09949eb"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vancancy",
+			"item": [
+				{
+					"name": "Get List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/vacancy/?keyword&sortBy=vacancyName&direction=DESC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vacancy",
+								""
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": null
+								},
+								{
+									"key": "sortBy",
+									"value": "vacancyName",
+									"description": "vacancyId / vacancyName / minAge / maxAge / requirementGender / expiredDate"
+								},
+								{
+									"key": "direction",
+									"value": "DESC",
+									"description": "ASC / DESC"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/vacancy/?keyword&sortBy=vacancyName&direction=DESC",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"vacancy",
+										""
+									],
+									"query": [
+										{
+											"key": "keyword",
+											"value": null
+										},
+										{
+											"key": "sortBy",
+											"value": "vacancyName",
+											"description": "vacancyId / vacancyName / minAge / maxAge / requirementGender / expiredDate"
+										},
+										{
+											"key": "direction",
+											"value": "DESC",
+											"description": "ASC / DESC"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "[\r\n    {\r\n        \"vacancyId\": \"6610ec480a8b707299d41bfb\",\r\n        \"vacancyName\": \"test2\",\r\n        \"minAge\": null,\r\n        \"maxAge\": 50,\r\n        \"requirementGender\": \"Male\",\r\n        \"createdDate\": null,\r\n        \"expiredDate\": \"2020-01-01\"\r\n    },\r\n    {\r\n        \"vacancyId\": \"6610fe3eb8a76471eae16888\",\r\n        \"vacancyName\": \"test123\",\r\n        \"minAge\": 0,\r\n        \"maxAge\": 50,\r\n        \"requirementGender\": \"Male\",\r\n        \"createdDate\": \"2024-04-06T15:48:14.887\",\r\n        \"expiredDate\": \"2025-01-01\"\r\n    },\r\n    {\r\n        \"vacancyId\": \"6610cc4402d76f2bd2db6894\",\r\n        \"vacancyName\": \"test\",\r\n        \"minAge\": 0,\r\n        \"maxAge\": 50,\r\n        \"requirementGender\": \"Male\",\r\n        \"createdDate\": null,\r\n        \"expiredDate\": \"2020-01-01\"\r\n    },\r\n    {\r\n        \"vacancyId\": \"6610ec500a8b707299d41bfc\",\r\n        \"vacancyName\": null,\r\n        \"minAge\": null,\r\n        \"maxAge\": 50,\r\n        \"requirementGender\": \"Male\",\r\n        \"createdDate\": null,\r\n        \"expiredDate\": \"2020-01-01\"\r\n    }\r\n]"
+						}
+					]
+				},
+				{
+					"name": "Insert Data",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vacancyName\": \"test123\",\r\n    \"minAge\": 0,\r\n    \"maxAge\": 50,\r\n    \"requirementGender\": \"Male\",\r\n    \"expiredDate\": \"2025-01-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/vacancy"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Data",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"vacancyName\": \"test2\",\r\n    \"minAge\": 1,\r\n    \"maxAge\": 51,\r\n    \"requirementGender\": \"Female\",\r\n    \"expiredDate\": \"2020-01-02\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/vacancy/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vacancy",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6610ccf70a8b707299d41bfa"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/vacancy/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"vacancy",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6610ccf70a8b707299d41bfa"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Application",
+			"item": [
+				{
+					"name": "Get List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/application/?keywords=6610fe3eb8a76471eae16888&sortBy=createdDate&direction=DESC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"application",
+								""
+							],
+							"query": [
+								{
+									"key": "keywords",
+									"value": "6610fe3eb8a76471eae16888"
+								},
+								{
+									"key": "sortBy",
+									"value": "createdDate",
+									"description": "aplyDate / createdDate"
+								},
+								{
+									"key": "direction",
+									"value": "DESC",
+									"description": "ASC / DESC"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\": \"admin\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/application/?keywords=6610fe3eb8a76471eae16888&sortBy=createdDate&direction=DESC",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"application",
+										""
+									],
+									"query": [
+										{
+											"key": "keywords",
+											"value": "6610fe3eb8a76471eae16888"
+										},
+										{
+											"key": "sortBy",
+											"value": "createdDate",
+											"description": "aplyDate / createdDate"
+										},
+										{
+											"key": "direction",
+											"value": "DESC",
+											"description": "ASC / DESC"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "[\r\n    {\r\n        \"applyId\": \"6611089946e0695dc53c73f6\",\r\n        \"candidate\": {\r\n            \"candidateId\": \"6610aedab7a6493e2ddc711f\",\r\n            \"fullName\": \"zara\",\r\n            \"dob\": \"2022-01-02\",\r\n            \"gender\": \"Male\",\r\n            \"age\": 2\r\n        },\r\n        \"vacancy\": {\r\n            \"vacancyId\": \"6610cc4402d76f2bd2db6894\",\r\n            \"vacancyName\": \"test\",\r\n            \"minAge\": 0,\r\n            \"maxAge\": 50,\r\n            \"requirementGender\": \"Male\",\r\n            \"createdDate\": null,\r\n            \"expiredDate\": \"2020-01-01\"\r\n        },\r\n        \"applyDate\": \"2020-01-01\",\r\n        \"createdDate\": \"2024-04-06T16:32:25.278\"\r\n    },\r\n    {\r\n        \"applyId\": \"661101aded42f840e66d8c20\",\r\n        \"candidate\": {\r\n            \"candidateId\": \"6610aedab7a6493e2ddc711f\",\r\n            \"fullName\": \"zara\",\r\n            \"dob\": \"2022-01-02\",\r\n            \"gender\": \"Male\",\r\n            \"age\": 2\r\n        },\r\n        \"vacancy\": {\r\n            \"vacancyId\": \"6610fe3eb8a76471eae16888\",\r\n            \"vacancyName\": \"test123\",\r\n            \"minAge\": 0,\r\n            \"maxAge\": 50,\r\n            \"requirementGender\": \"Male\",\r\n            \"createdDate\": \"2024-04-06T15:48:14.887\",\r\n            \"expiredDate\": \"2025-01-01\"\r\n        },\r\n        \"applyDate\": \"2020-01-01\",\r\n        \"createdDate\": \"2024-04-06T16:02:44.541\"\r\n    }\r\n]"
+						}
+					]
+				},
+				{
+					"name": "Insert Data",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"candidateId\": \"6610aedab7a6493e2ddc711f\",\r\n    \"vacancyId\": \"6610cc4402d76f2bd2db6894\",\r\n    \"applyDate\": \"2020-01-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/application"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Data",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"candidateId\": \"6610aedab7a6493e2ddc711f\",\r\n    \"vacancyId\": \"6610fe3eb8a76471eae16888\",\r\n    \"applyDate\": \"2026-01-01\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/application/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"application",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6610ff1624a3df203ab7661f",
+									"description": "6610ff1624a3df203ab7661f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Data",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/application/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"application",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "6610fe44b8a76471eae16889"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
